@@ -3,10 +3,12 @@
 // 状態管理
 let currentFilter = 'all';
 let currentSearchTerm = '';
+let currentArea = '';
 
 // 初期化
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
+    parseUrlParameters();
     renderMunicipalities();
     setupEventListeners();
 });
@@ -21,6 +23,12 @@ function initNavigation() {
             navMenu.classList.toggle('active');
         });
     }
+}
+
+// URLパラメータの解析
+function parseUrlParameters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    currentArea = urlParams.get('area') || '';
 }
 
 // イベントリスナー設定
@@ -68,6 +76,11 @@ function filterAndRenderMunicipalities() {
         const matchesSearch = currentSearchTerm === '' || 
             municipality.name.includes(currentSearchTerm);
         
+        // エリアフィルター（データにareaフィールドがある場合のみ）
+        const matchesArea = currentArea === '' || 
+            !municipality.area || 
+            municipality.area === currentArea;
+        
         // カテゴリーフィルター
         let matchesFilter = true;
         switch (currentFilter) {
@@ -85,7 +98,7 @@ function filterAndRenderMunicipalities() {
                 matchesFilter = true;
         }
         
-        return matchesSearch && matchesFilter;
+        return matchesSearch && matchesFilter && matchesArea;
     });
     
     renderMunicipalities(filteredData);

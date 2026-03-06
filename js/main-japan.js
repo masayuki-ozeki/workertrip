@@ -9,16 +9,16 @@ const prefecturesData = [
     { name: "宮城県", region: "hokkaido-tohoku", status: "coming-soon", url: "#" },
     { name: "秋田県", region: "hokkaido-tohoku", status: "coming-soon", url: "#" },
     { name: "山形県", region: "hokkaido-tohoku", status: "coming-soon", url: "#" },
-    { name: "福島県", region: "hokkaido-tohoku", status: "coming-soon", url: "#" },
+    { name: "福島県", region: "hokkaido-tohoku", status: "available", url: "fukushima/index.html", municipalities: 59, subsidies: 10 },
     
     // 関東
     { name: "茨城県", region: "kanto", status: "coming-soon", url: "#" },
     { name: "栃木県", region: "kanto", status: "coming-soon", url: "#" },
-    { name: "群馬県", region: "kanto", status: "coming-soon", url: "#" },
-    { name: "埼玉県", region: "kanto", status: "coming-soon", url: "#" },
-    { name: "千葉県", region: "kanto", status: "coming-soon", url: "#" },
+    { name: "群馬県", region: "kanto", status: "available", url: "gunma/index.html", municipalities: 35, subsidies: 2 },
+    { name: "埼玉県", region: "kanto", status: "available", url: "saitama/index.html", municipalities: 63, subsidies: 0 },
+    { name: "千葉県", region: "kanto", status: "available", url: "chiba/index.html", municipalities: 54, subsidies: 1 },
     { name: "東京都", region: "kanto", status: "coming-soon", url: "#" },
-    { name: "神奈川県", region: "kanto", status: "coming-soon", url: "#" },
+    { name: "神奈川県", region: "kanto", status: "available", url: "kanagawa/index.html", municipalities: 33, subsidies: 1 },
     
     // 中部
     { name: "新潟県", region: "chubu", status: "available", url: "niigata/index.html", municipalities: 30, subsidies: 1 },
@@ -38,7 +38,7 @@ const prefecturesData = [
     { name: "大阪府", region: "kinki", status: "coming-soon", url: "#" },
     { name: "兵庫県", region: "kinki", status: "coming-soon", url: "#" },
     { name: "奈良県", region: "kinki", status: "coming-soon", url: "#" },
-    { name: "和歌山県", region: "kinki", status: "coming-soon", url: "#" },
+    { name: "和歌山県", region: "kinki", status: "available", url: "wakayama/index.html", municipalities: 30, subsidies: 0 },
     
     // 中国・四国
     { name: "鳥取県", region: "chugoku-shikoku", status: "coming-soon", url: "#" },
