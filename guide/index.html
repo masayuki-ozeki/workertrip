@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ワーケーション完全ガイド - 場所選びから申請まで | WORKERTRIP</title>
+    <meta name="description" content="ワーケーションの場所選び、補助金情報、申請方法まで。全国880市町村・64件の補助金、人気スポット紹介、申請フローを完全網羅。">
+    <link rel="canonical" href="https://workertrip.jp/guide/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ワーケーション完全ガイド | WORKERTRIP">
+    <meta property="og:description" content="場所選びから申請まで、ワーケーションのすべてをサポート">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://workertrip.jp/guide/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=1200&h=630&fit=crop">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 1rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,96C1248,75,1344,53,1392,42.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .hero-stat {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+        }
+        
+        .hero-stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            display: block;
+        }
+        
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+        
+        /* Section */
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+        
+        /* Pillars Grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .pillar {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .pillar:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2);
+        }
+        
+        .pillar-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pillar-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .pillar-description {
+            color: #718096;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .pillar-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-radius: 12px;
+        }
+        
+        .pillar-stat {
+            text-align: center;
+        }
+        
+        .pillar-stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #667eea;
+            display: block;
+        }
+        
+        .pillar-stat-label {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        
+        .pillar-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        
+        .pillar-link {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            background: #edf2f7;
+            color: #2d3748;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .pillar-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .pillar-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        .pillar-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* User Journey */
+        .journey {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .journey-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+        
+        .journey-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .journey-step {
+            flex: 1;
+            min-width: 200px;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .journey-step.current {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .journey-step a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .journey-step:not(.current):hover {
+            transform: scale(1.05);
+            border-color: #667eea;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+        }
+        
+        .journey-step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .journey-step-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .journey-step-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .journey-arrow {
+            font-size: 2rem;
+            color: #667eea;
+            font-weight: 900;
+        }
+        
+        /* Featured Spots */
+        .featured-spots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .spot-card {
+            background: #f7fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+        
+        .spot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .spot-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        .spot-content {
+            padding: 1.5rem;
+        }
+        
+        .spot-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+        
+        .spot-desc {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        
+        .coming-soon {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-description {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-stats {
+                gap: 1rem;
+            }
+            
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .journey-flow {
+                flex-direction: column;
+            }
+            
+            .journey-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>🎒 ワーケーション完全ガイド</h1>
+            <p class="hero-subtitle">
+                場所選びから補助金、申請方法まで。<br>
+                あなたのワーケーションを完全サポート。
+            </p>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">880</span>
+                    <span class="hero-stat-label">市町村情報</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">64</span>
+                    <span class="hero-stat-label">補助金制度</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">19</span>
+                    <span class="hero-stat-label">都道府県</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- 3 Pillars -->
+        <section class="section">
+            <h2 class="section-title">ワーケーションに必要な、すべての情報</h2>
+            
+            <div class="pillars-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <!-- Pillar 1: 補助金ガイド -->
+                <div class="pillar">
+                    <div class="pillar-icon">💰</div>
+                    <h3 class="pillar-title">補助金ガイド</h3>
+                    <p class="pillar-description">
+                        全国64件の補助金制度を完全網羅。<br>
+                        地域別・属性別に最適な支援を検索できます。
+                    </p>
+                    
+                    <div class="pillar-stats">
+                        <div class="pillar-stat">
+                            <span class="pillar-stat-number">64</span>
+                            <span class="pillar-stat-label">補助金制度</span>
+                        </div>
+                        <div class="pillar-stat">
+                            <span class="pillar-stat-number">19</span>
+                            <span class="pillar-stat-label">都道府県</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pillar-links">
+                        <a href="../subsidy/region/chugoku-shikoku.html" class="pillar-link">
+                            🥇 中国・四国（43件）
+                        </a>
+                        <a href="../subsidy/region/hokkaido-tohoku.html" class="pillar-link">
+                            🥈 北海道・東北（17件）
+                        </a>
+                        <a href="../subsidy/region/kanto.html" class="pillar-link">
+                            🥉 関東（4件）
+                        </a>
+                    </div>
+                    
+                    <a href="../subsidy/" class="pillar-btn">
+                        補助金ガイドを見る →
+                    </a>
+                </div>
+                
+                <!-- Pillar 2: 人気スポット -->
+                <div class="pillar">
+                    <div class="pillar-icon">🏔️</div>
+                    <h3 class="pillar-title">人気スポット紹介</h3>
+                    <p class="pillar-description">
+                        実際の体験者が語る、リアルなワーケーション情報。<br>
+                        注目エリアの魅力を深掘り。
+                    </p>
+                    
+                    <div class="featured-spots">
+                        <div class="spot-card coming-soon">
+                            <div class="spot-image">🏘️</div>
+                            <div class="spot-content">
+                                <div class="spot-name">神山町</div>
+                                <div class="spot-desc">ITの聖地・徳島</div>
+                            </div>
+                        </div>
+                        <div class="spot-card coming-soon">
+                            <div class="spot-image">🎨</div>
+                            <div class="spot-content">
+                                <div class="spot-name">直島</div>
+                                <div class="spot-desc">アートの島・香川</div>
+                            </div>
+                        </div>
+                        <div class="spot-card coming-soon">
+                            <div class="spot-image">🌲</div>
+                            <div class="spot-content">
+                                <div class="spot-name">馬路村</div>
+                                <div class="spot-desc">ゆずの里・高知</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="text-align: center; color: #718096; font-size: 0.9rem;">
+                        📝 スポット記事は準備中です（近日公開予定）
+                    </p>
+                </div>
+                
+                <!-- Pillar 3: 副業・兼業 -->
+                <div class="pillar">
+                    <div class="pillar-icon">💼</div>
+                    <h3 class="pillar-title">副業・兼業マッチング</h3>
+                    <p class="pillar-description">
+                        地方自治体の副業マッチングサイトを完全網羅。<br>
+                        ワーケーション×副業で地方と繋がる。
+                    </p>
+                    
+                    <div class="pillar-stats">
+                        <div class="pillar-stat">
+                            <span class="pillar-stat-number">12+</span>
+                            <span class="pillar-stat-label">サイト</span>
+                        </div>
+                        <div class="pillar-stat">
+                            <span class="pillar-stat-number">18</span>
+                            <span class="pillar-stat-label">都道府県</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pillar-links">
+                        <a href="../sidejob/region/tohoku.html" class="pillar-link">
+                            🗻 東北エリア
+                        </a>
+                        <a href="../sidejob/region/shikoku.html" class="pillar-link">
+                            🌊 四国エリア
+                        </a>
+                        <a href="../sidejob/region/nationwide.html" class="pillar-link">
+                            🇯🇵 全国対応
+                        </a>
+                    </div>
+                    
+                    <a href="../sidejob/" class="pillar-btn">
+                        副業サイトを見る →
+                    </a>
+                </div>
+                
+                <!-- Pillar 4: 申請ガイド -->
+                <div class="pillar">
+                    <div class="pillar-icon">📝</div>
+                    <h3 class="pillar-title">申請フローガイド</h3>
+                    <p class="pillar-description">
+                        補助金申請の流れを、ステップ・バイ・ステップで解説。<br>
+                        必要書類から手続きまで完全サポート。
+                    </p>
+                    
+                    <div class="pillar-links">
+                        <a href="#" class="pillar-link" style="opacity: 0.6; pointer-events: none;">
+                            💼 フリーランス向け（準備中）
+                        </a>
+                        <a href="#" class="pillar-link" style="opacity: 0.6; pointer-events: none;">
+                            🏢 法人向け（準備中）
+                        </a>
+                        <a href="#" class="pillar-link" style="opacity: 0.6; pointer-events: none;">
+                            🏡 移住検討者向け（準備中）
+                        </a>
+                    </div>
+                    
+                    <p style="text-align: center; color: #718096; font-size: 0.9rem; margin-top: 1rem;">
+                        📝 申請ガイドは準備中です（近日公開予定）
+                    </p>
+                </div>
+                
+                <!-- Pillar 4: 副業・兼業マッチング 🆕 -->
+                <div class="pillar">
+                    <div class="pillar-icon">💼</div>
+                    <h3 class="pillar-title">副業・兼業マッチング <span style="background: #48bb78; color: white; font-size: 0.7rem; padding: 0.25rem 0.5rem; border-radius: 4px; margin-left: 0.5rem;">NEW</span></h3>
+                    <p class="pillar-description">
+                        地方自治体が運営する副業マッチングサイトを比較。<br>
+                        ワーケーション×副業で地方と繋がる。
+                    </p>
+                    
+                    <div class="pillar-stats">
+                        <div class="pillar-stat">
+                            <span class="pillar-stat-number">18</span>
+                            <span class="pillar-stat-label">都道府県</span>
+                        </div>
+                        <div class="pillar-stat">
+                            <span class="pillar-stat-number">12+</span>
+                            <span class="pillar-stat-label">サイト</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pillar-links">
+                        <a href="../sidejob/region/tohoku.html" class="pillar-link">
+                            🗻 東北エリア（2サイト）
+                        </a>
+                        <a href="../sidejob/region/shikoku.html" class="pillar-link">
+                            🌊 四国エリア（2サイト）
+                        </a>
+                        <a href="../sidejob/region/nationwide.html" class="pillar-link">
+                            🇯🇵 全国対応（5+サイト）
+                        </a>
+                    </div>
+                    
+                    <a href="../sidejob/" class="pillar-btn">
+                        副業サイトを見る →
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- User Journey -->
+        <section class="journey">
+            <h2 class="journey-title">💡 ワーケーション実現までの4ステップ</h2>
+            
+            <div class="journey-flow">
+                <div class="journey-step">
+                    <a href="../subsidy/">
+                        <div class="journey-step-icon">💰</div>
+                        <div class="journey-step-title">STEP 1</div>
+                        <div class="journey-step-desc">補助金を知る</div>
+                    </a>
+                </div>
+                
+                <div class="journey-arrow">→</div>
+                
+                <div class="journey-step">
+                    <a href="../index.html">
+                        <div class="journey-step-icon">🗾</div>
+                        <div class="journey-step-title">STEP 2</div>
+                        <div class="journey-step-desc">場所を決める</div>
+                    </a>
+                </div>
+                
+                <div class="journey-arrow">→</div>
+                
+                <div class="journey-step">
+                    <a href="../sidejob/">
+                        <div class="journey-step-icon">💼</div>
+                        <div class="journey-step-title">STEP 3</div>
+                        <div class="journey-step-desc">副業を探す</div>
+                    </a>
+                </div>
+                
+                <div class="journey-arrow">→</div>
+                
+                <div class="journey-step" style="opacity: 0.6;">
+                    <div class="journey-step-icon">📝</div>
+                    <div class="journey-step-title">STEP 4</div>
+                    <div class="journey-step-desc">申請する（準備中）</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2 class="cta-title">さあ、始めましょう</h2>
+            <p class="cta-description">
+                全国880市町村から、あなたにぴったりのワーケーション先を見つけよう
+            </p>
+            <div class="cta-buttons">
+                <a href="../index.html" class="cta-button">
+                    🗾 全国マップから探す
+                </a>
+                <a href="../subsidy/" class="cta-button">
+                    💰 補助金を調べる
+                </a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

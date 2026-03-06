@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- グローバルナビゲーション -->
+    <div id="global-nav-mount"></div>
+    <script src="js/global-nav.js"></script>
+    
     <!-- ヘッダー -->
     <header class="wt-hero">
         <div class="wt-hero__bg" aria-hidden="true">
@@ -49,6 +53,8 @@
             <ul class="nav-secondary-menu">
                 <li><a href="index.html" class="nav-secondary-link active"><i class="fas fa-home"></i> ホーム</a></li>
                 <li><a href="#prefectures" class="nav-secondary-link"><i class="fas fa-map-marked-alt"></i> 都道府県</a></li>
+                <li><a href="subsidy/index.html" class="nav-secondary-link"><i class="fas fa-coins"></i> 補助金</a></li>
+                <li><a href="sidejob/index.html" class="nav-secondary-link"><i class="fas fa-briefcase"></i> 副業・兼業</a></li>
                 <li><a href="#about" class="nav-secondary-link"><i class="fas fa-info-circle"></i> このサイトについて</a></li>
             </ul>
         </div>
@@ -280,6 +286,80 @@
                     <h3>詳細な検索機能</h3>
                     <p>エリア別、補助金の有無、施設種別など、様々な条件で検索可能。効率的に理想の場所を見つけられます。</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 補助金ガイドセクション 🆕 -->
+    <section class="subsidy-highlight-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 5rem 1rem; margin: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2 class="section-title" style="color: white; font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem;">
+                    💰 ワーケーション補助金ガイド
+                </h2>
+                <p style="color: rgba(255,255,255,0.95); font-size: 1.2rem; margin-bottom: 2rem;">
+                    全国64件の補助金制度を完全網羅 | 地域別・属性別に検索
+                </p>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem;">
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 12px;">
+                        <div style="font-size: 2.5rem; font-weight: 900; color: white;">64</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9; color: white;">補助金制度</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 12px;">
+                        <div style="font-size: 2.5rem; font-weight: 900; color: white;">19</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9; color: white;">都道府県</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 1rem 2rem; border-radius: 12px;">
+                        <div style="font-size: 2.5rem; font-weight: 900; color: white;">880</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9; color: white;">市町村</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <a href="guide/index.html" style="background: white; border-radius: 16px; padding: 2rem; text-decoration: none; color: inherit; transition: all 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" 
+                   onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.2)'" 
+                   onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                    <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🎒</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: #2d3748;">
+                        完全ガイド <span style="background: #48bb78; color: white; font-size: 0.7rem; padding: 0.25rem 0.5rem; border-radius: 4px; margin-left: 0.5rem;">NEW</span>
+                    </h3>
+                    <p style="color: #718096; text-align: center; line-height: 1.6;">
+                        場所選びから申請まで<br>すべてをサポート
+                    </p>
+                </a>
+                
+                <a href="subsidy/region/chugoku-shikoku.html" style="background: white; border-radius: 16px; padding: 2rem; text-decoration: none; color: inherit; transition: all 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" 
+                   onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.2)'" 
+                   onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                    <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🥇</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: #2d3748;">
+                        中国・四国 <span style="background: #f56565; color: white; font-size: 0.7rem; padding: 0.25rem 0.5rem; border-radius: 4px; margin-left: 0.5rem;">43件</span>
+                    </h3>
+                    <p style="color: #718096; text-align: center; line-height: 1.6;">
+                        高知県34件・愛媛県9件<br>全国トップクラスの充実度
+                    </p>
+                </a>
+                
+                <a href="subsidy/region/hokkaido-tohoku.html" style="background: white; border-radius: 16px; padding: 2rem; text-decoration: none; color: inherit; transition: all 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" 
+                   onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 32px rgba(0,0,0,0.2)'" 
+                   onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'">
+                    <div style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">🥈</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: #2d3748;">
+                        北海道・東北 <span style="background: #667eea; color: white; font-size: 0.7rem; padding: 0.25rem 0.5rem; border-radius: 4px; margin-left: 0.5rem;">17件</span>
+                    </h3>
+                    <p style="color: #718096; text-align: center; line-height: 1.6;">
+                        福島県10件・北海道4件<br>大自然の中で働く
+                    </p>
+                </a>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="subsidy/index.html" style="display: inline-block; padding: 1rem 3rem; background: white; color: #667eea; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: all 0.3s;"
+                   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.3)'" 
+                   onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'">
+                    すべての補助金を見る →
+                </a>
             </div>
         </div>
     </section>
