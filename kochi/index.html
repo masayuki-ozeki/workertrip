@@ -250,6 +250,23 @@
         </div>
     </section>
 
+    <!-- おすすめ施設セクション -->
+    <section class="facilities-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">RECOMMENDED FACILITIES</span>
+                <h2 class="section-title">高知のおすすめワーケーション施設</h2>
+                <p class="section-description">
+                    高知県内のワーケーションに最適な宿泊施設・コワーキングスペースをご紹介。<br>
+                    地元の魅力を満喫しながら、快適に仕事ができる環境が整っています。
+                </p>
+            </div>
+            <div class="facilities-grid" id="facilitiesGrid">
+                <!-- 施設カードはJavaScriptで動的生成 -->
+            </div>
+        </div>
+    </section>
+
     <!-- CTAセクション -->
     <section class="cta-section">
         <div class="container">
@@ -322,5 +339,83 @@
 
     <script src="../js/data-kochi.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+        // おすすめ施設の動的レンダリング
+        document.addEventListener('DOMContentLoaded', function() {
+            const facilitiesGrid = document.getElementById('facilitiesGrid');
+            
+            if (facilitiesGrid && typeof recommendedFacilities !== 'undefined') {
+                recommendedFacilities.forEach(function(facility) {
+                    const card = document.createElement('div');
+                    card.className = 'facility-card';
+                    
+                    // 星評価の生成
+                    let starsHTML = '';
+                    const fullStars = Math.floor(facility.rating);
+                    const hasHalfStar = facility.rating % 1 !== 0;
+                    
+                    for (let i = 0; i < fullStars; i++) {
+                        starsHTML += '<i class="fas fa-star"></i>';
+                    }
+                    if (hasHalfStar) {
+                        starsHTML += '<i class="fas fa-star-half-alt"></i>';
+                    }
+                    
+                    // 特徴タグの生成
+                    let featuresHTML = '';
+                    facility.features.forEach(function(feature) {
+                        featuresHTML += '<span class="facility-feature-tag">' + feature + '</span>';
+                    });
+                    
+                    // リンクボタンの生成
+                    let linksHTML = '';
+                    if (facility.rakutenUrl) {
+                        linksHTML += '<a href="' + facility.rakutenUrl + '" class="facility-link" target="_blank" rel="nofollow noopener"><i class="fas fa-external-link-alt"></i> 楽天で予約</a>';
+                    }
+                    if (facility.jyaranUrl) {
+                        linksHTML += '<a href="' + facility.jyaranUrl + '" class="facility-link jyaran" target="_blank" rel="nofollow noopener"><i class="fas fa-external-link-alt"></i> じゃらんで予約</a>';
+                    }
+                    if (!facility.rakutenUrl && !facility.jyaranUrl) {
+                        linksHTML = '<span style="color: var(--text-light); font-size: 0.9rem;">公式サイトで直接ご予約ください</span>';
+                    }
+                    
+                    card.innerHTML = `
+                        <img src="${facility.imageUrl}" 
+                             alt="${facility.name}" 
+                             class="facility-image"
+                             onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop'">
+                        <div class="facility-content">
+                            <div class="facility-header">
+                                <span class="facility-type-badge">${facility.type}</span>
+                                <h3 class="facility-name">${facility.name}</h3>
+                                <div class="facility-area">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    ${facility.area}
+                                </div>
+                            </div>
+                            <p class="facility-description">${facility.description}</p>
+                            <div class="facility-features">
+                                ${featuresHTML}
+                            </div>
+                            <div class="facility-footer">
+                                <div class="facility-price">
+                                    <i class="fas fa-yen-sign"></i> ${facility.price}
+                                </div>
+                                <div class="facility-rating">
+                                    ${starsHTML}
+                                    <span style="color: var(--text-medium); margin-left: 6px;">${facility.rating}</span>
+                                </div>
+                                <div class="facility-links">
+                                    ${linksHTML}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    facilitiesGrid.appendChild(card);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
