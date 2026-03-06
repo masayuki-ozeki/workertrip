@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国・四国エリア ワーケーション補助金ガイド | WORKERTRIP</title>
+    <meta name="description" content="中国・四国4県のワーケーション補助金情報。高知県34件、愛媛県9件など、合計43件の補助金制度を詳しく解説。">
+    <link rel="canonical" href="https://workertrip.jp/subsidy/region/chugoku-shikoku.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="中国・四国エリア ワーケーション補助金ガイド">
+    <meta property="og:description" content="中国・四国4県95市町村の補助金情報を完全網羅">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://workertrip.jp/subsidy/region/chugoku-shikoku.html">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #38b2ac 0%, #319795 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumb {
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Prefecture Grid */
+        .prefecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .prefecture-card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .prefecture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(56, 178, 172, 0.2);
+            border-color: #38b2ac;
+        }
+        
+        .prefecture-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .prefecture-stat {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #38b2ac;
+            margin-bottom: 0.5rem;
+        }
+        
+        .prefecture-label {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        
+        /* Subsidy List */
+        .subsidy-list {
+            list-style: none;
+        }
+        
+        .subsidy-item {
+            background: #f7fafc;
+            border-left: 4px solid #38b2ac;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .subsidy-item:hover {
+            background: #edf2f7;
+            transform: translateX(5px);
+        }
+        
+        .subsidy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .subsidy-municipality {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        
+        .subsidy-prefecture-tag {
+            background: #38b2ac;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .subsidy-description {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .subsidy-link {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: #38b2ac;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .subsidy-link:hover {
+            background: #319795;
+            transform: translateY(-2px);
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #38b2ac;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #718096;
+            margin-top: 0.5rem;
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #38b2ac 0%, #319795 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .cta-button {
+            padding: 1rem 2rem;
+            background: white;
+            color: #38b2ac;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8rem; }
+            .prefecture-grid { grid-template-columns: 1fr; }
+            .subsidy-header { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🌊 中国・四国エリア</h1>
+        <p>ワーケーション補助金ガイド</p>
+        <div class="breadcrumb">
+            <a href="../../index.html">トップ</a> / 
+            <a href="../index.html">補助金ガイド</a> / 
+            中国・四国
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Overview -->
+        <section class="section">
+            <h2 class="section-title">エリア概要</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">都道府県</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">95</span>
+                    <span class="stat-label">市町村</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">43</span>
+                    <span class="stat-label">補助金制度</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">45%</span>
+                    <span class="stat-label">補助金実施率</span>
+                </div>
+            </div>
+            
+            <p style="line-height: 1.8; color: #4a5568;">
+                中国・四国エリアは、<strong>瀬戸内海の穏やかな気候</strong>と<strong>豊かな自然環境</strong>が魅力のワーケーション先です。
+                特に<strong>高知県は34市町村全てで補助金制度</strong>を実施しており、全国トップクラスの支援体制を誇ります。
+                <br><br>
+                愛媛県の南予エリア9市町でも広域連携した補助金制度があり、<strong>しまなみ海道</strong>や<strong>四万十川</strong>など、
+                自然と触れ合いながら働ける環境が整っています。
+            </p>
+        </section>
+        
+        <!-- Prefectures -->
+        <section class="section">
+            <h2 class="section-title">都道府県別 補助金情報</h2>
+            
+            <div class="prefecture-grid">
+                <a href="../../kochi/index.html" class="prefecture-card">
+                    <div class="prefecture-name">高知県</div>
+                    <div class="prefecture-stat">34</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+                
+                <a href="../../ehime/index.html" class="prefecture-card">
+                    <div class="prefecture-name">愛媛県</div>
+                    <div class="prefecture-stat">9</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+                
+                <a href="../../kagawa/index.html" class="prefecture-card">
+                    <div class="prefecture-name">香川県</div>
+                    <div class="prefecture-stat">0</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+                
+                <a href="../../tokushima/index.html" class="prefecture-card">
+                    <div class="prefecture-name">徳島県</div>
+                    <div class="prefecture-stat">0</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- 高知県 Subsidies -->
+        <section class="section">
+            <h2 class="section-title">🥇 高知県の補助金制度（34件）</h2>
+            
+            <ul class="subsidy-list">
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">高知県（全域対象）</div>
+                        <div class="subsidy-prefecture-tag">高知県</div>
+                    </div>
+                    <p class="subsidy-description">
+                        <strong>県外企業向けワーケーション補助金</strong><br>
+                        最大30,000円/人の宿泊費・交通費補助。高知県内でのワーケーション実施企業に対する支援制度。
+                        四万十川、仁淀川、室戸岬など、豊かな自然環境でのワーケーションを促進。
+                    </p>
+                    <a href="https://kochi-tabi.jp/kanko-campaign/workation/support.html?id=2" class="subsidy-link" target="_blank" rel="noopener">
+                        詳細を見る <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </li>
+                
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">高知市</div>
+                        <div class="subsidy-prefecture-tag">高知県</div>
+                    </div>
+                    <p class="subsidy-description">
+                        <strong>テレワーク移住支援補助金</strong><br>
+                        最大300,000円の設備整備費補助。高知市内でテレワークを実施する移住者向けの支援制度。
+                        Wi-Fi環境、デスク・チェアなどの購入費用を補助。
+                    </p>
+                    <a href="https://www.city.kochi.kochi.jp/life/sub/5/196/1532/" class="subsidy-link" target="_blank" rel="noopener">
+                        詳細を見る <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </li>
+                
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">室戸市</div>
+                        <div class="subsidy-prefecture-tag">高知県</div>
+                    </div>
+                    <p class="subsidy-description">
+                        <strong>室戸ワーケーション支援</strong><br>
+                        ユネスコ世界ジオパークに認定された室戸岬の大自然の中でのワーケーション。
+                        県の補助金制度が利用可能。サーフィンやダイビングも楽しめます。
+                    </p>
+                    <a href="https://kochi-tabi.jp/kanko-campaign/workation/" class="subsidy-link" target="_blank" rel="noopener">
+                        詳細を見る <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </li>
+                
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">四万十市</div>
+                        <div class="subsidy-prefecture-tag">高知県</div>
+                    </div>
+                    <p class="subsidy-description">
+                        <strong>四万十川流域ワーケーション</strong><br>
+                        日本最後の清流・四万十川沿いでのワーケーション支援。
+                        カヌーや川遊びを楽しみながら仕事ができる環境。県の補助金制度対象。
+                    </p>
+                    <a href="https://kochi-tabi.jp/kanko-campaign/workation/" class="subsidy-link" target="_blank" rel="noopener">
+                        詳細を見る <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </li>
+                
+                <li class="subsidy-item">
+                    <p style="color: #718096; text-align: center;">
+                        <strong>その他30市町村でも県の補助金制度が利用可能</strong><br>
+                        各市町村の詳細は <a href="../../kochi/municipalities.html" style="color: #38b2ac;">高知県市町村一覧</a> をご覧ください
+                    </p>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- 愛媛県 Subsidies -->
+        <section class="section">
+            <h2 class="section-title">🥉 愛媛県の補助金制度（9件）</h2>
+            
+            <ul class="subsidy-list">
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">南予エリア 広域連携</div>
+                        <div class="subsidy-prefecture-tag">愛媛県</div>
+                    </div>
+                    <p class="subsidy-description">
+                        <strong>南予地域ワーケーション補助金</strong><br>
+                        宇和島市、八幡浜市、大洲市、西予市、内子町、伊方町、松野町、鬼北町、愛南町の9市町が連携。
+                        伊予灘・宇和海に面した風光明媚なエリアでのワーケーションを支援。
+                    </p>
+                    <a href="https://www.pref.ehime.jp/page/109200.html" class="subsidy-link" target="_blank" rel="noopener">
+                        詳細を見る <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </li>
+                
+                <li class="subsidy-item">
+                    <p style="color: #718096; text-align: center;">
+                        <strong>対象9市町の詳細情報</strong><br>
+                        各市町の観光情報・ワーケーション施設は <a href="../../ehime/municipalities.html" style="color: #38b2ac;">愛媛県市町村一覧</a> をご覧ください
+                    </p>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">瀬戸内・四国でのワーケーションを始めよう</h2>
+            <p style="font-size: 1.1rem; opacity: 0.95;">
+                43件の補助金制度から、あなたに最適な支援を見つけましょう
+            </p>
+            <div class="cta-buttons">
+                <a href="../index.html" class="cta-button">← 補助金ガイドTOP</a>
+                <a href="../../index.html" class="cta-button">全国マップから探す</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

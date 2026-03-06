@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ワーケーション補助金 完全ガイド 2026年版 | WORKERTRIP</title>
+    <meta name="description" content="全国19都道府県・880市町村のワーケーション補助金情報を完全網羅。地域別・属性別に最適な補助金制度を検索できます。フリーランス・法人・移住検討者向けガイド付き。">
+    <link rel="canonical" href="https://workertrip.jp/subsidy/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ワーケーション補助金 完全ガイド 2026年版 | WORKERTRIP">
+    <meta property="og:description" content="全国19都道府県・880市町村のワーケーション補助金情報を完全網羅。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://workertrip.jp/subsidy/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=630&fit=crop">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+        
+        .header .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            color: #667eea;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-title i {
+            color: #667eea;
+        }
+        
+        .section-description {
+            color: #718096;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        /* Region Cards */
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .region-card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .region-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        
+        .region-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .region-icon {
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        
+        .region-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .region-stat {
+            text-align: center;
+        }
+        
+        .region-stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+        
+        .region-stat-label {
+            font-size: 0.8rem;
+            color: #718096;
+            margin-top: 0.25rem;
+        }
+        
+        /* Category Cards */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .category-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .category-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .category-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .category-description {
+            color: #718096;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Top Prefectures */
+        .top-list {
+            list-style: none;
+        }
+        
+        .top-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .top-item:hover {
+            background: #edf2f7;
+            transform: translateX(5px);
+        }
+        
+        .top-rank {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #667eea;
+            min-width: 50px;
+        }
+        
+        .top-prefecture {
+            flex: 1;
+            padding: 0 1rem;
+        }
+        
+        .top-prefecture-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.25rem;
+        }
+        
+        .top-prefecture-info {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        
+        .top-count {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #667eea;
+            text-align: right;
+        }
+        
+        .top-count-label {
+            font-size: 0.8rem;
+            color: #718096;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-description {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-link {
+            color: #90cdf4;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header .stats {
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                padding: 0.75rem 1rem;
+                min-width: 120px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 2rem 1rem;
+            }
+            
+            .region-grid,
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>🏔️ ワーケーション補助金 完全ガイド</h1>
+        <p class="subtitle">全国880市町村のワーケーション・テレワーク補助金制度を完全網羅</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">19</span>
+                <span class="stat-label">都道府県</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">880</span>
+                <span class="stat-label">市町村</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">64</span>
+                <span class="stat-label">補助金制度</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2026</span>
+                <span class="stat-label">最新版</span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-link">🏠 トップ</a>
+            <a href="#regions" class="nav-link">📍 地域別</a>
+            <a href="#categories" class="nav-link">👥 属性別</a>
+            <a href="#top" class="nav-link">🏆 ランキング</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-info-circle"></i>
+                このガイドについて
+            </h2>
+            <p class="section-description">
+                WORKERTRIPは、全国19都道府県・880市町村のワーケーション・テレワーク補助金情報を網羅的に収集・整理した完全ガイドです。
+                <br><br>
+                <strong>📌 最新情報（2026年3月6日更新）</strong><br>
+                ・北海道・東北: 7県 406市町村 17件の補助金<br>
+                ・関東: 4県 185市町村 4件の補助金<br>
+                ・中部: 3県 105市町村 3件の補助金<br>
+                ・中国・四国: 4県 95市町村 43件の補助金<br>
+                ・近畿: 1県 30市町村 0件の補助金<br>
+                <br>
+                地域別・属性別に最適な補助金制度を検索し、あなたに最適なワーケーション先を見つけましょう。
+            </p>
+        </section>
+        
+        <!-- Regional Guide -->
+        <section class="section" id="regions">
+            <h2 class="section-title">
+                <i class="fas fa-map-marked-alt"></i>
+                地域別補助金ガイド
+            </h2>
+            <p class="section-description">
+                日本を6つの地域に分けて、各地域のワーケーション補助金情報を詳しく解説します。
+            </p>
+            
+            <div class="region-grid">
+                <a href="region/hokkaido-tohoku.html" class="region-card">
+                    <div class="region-name">
+                        北海道・東北
+                        <span class="region-icon">🗻</span>
+                    </div>
+                    <div class="region-stats">
+                        <div class="region-stat">
+                            <span class="region-stat-number">7</span>
+                            <span class="region-stat-label">都道府県</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">406</span>
+                            <span class="region-stat-label">市町村</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">17</span>
+                            <span class="region-stat-label">補助金</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="region/kanto.html" class="region-card">
+                    <div class="region-name">
+                        関東
+                        <span class="region-icon">🏙️</span>
+                    </div>
+                    <div class="region-stats">
+                        <div class="region-stat">
+                            <span class="region-stat-number">4</span>
+                            <span class="region-stat-label">都道府県</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">185</span>
+                            <span class="region-stat-label">市町村</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">4</span>
+                            <span class="region-stat-label">補助金</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="region/chubu.html" class="region-card">
+                    <div class="region-name">
+                        中部
+                        <span class="region-icon">⛰️</span>
+                    </div>
+                    <div class="region-stats">
+                        <div class="region-stat">
+                            <span class="region-stat-number">3</span>
+                            <span class="region-stat-label">都道府県</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">105</span>
+                            <span class="region-stat-label">市町村</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">3</span>
+                            <span class="region-stat-label">補助金</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="region/kinki.html" class="region-card">
+                    <div class="region-name">
+                        近畿
+                        <span class="region-icon">🏯</span>
+                    </div>
+                    <div class="region-stats">
+                        <div class="region-stat">
+                            <span class="region-stat-number">1</span>
+                            <span class="region-stat-label">都道府県</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">30</span>
+                            <span class="region-stat-label">市町村</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">0</span>
+                            <span class="region-stat-label">補助金</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="region/chugoku-shikoku.html" class="region-card">
+                    <div class="region-name">
+                        中国・四国
+                        <span class="region-icon">🌊</span>
+                    </div>
+                    <div class="region-stats">
+                        <div class="region-stat">
+                            <span class="region-stat-number">4</span>
+                            <span class="region-stat-label">都道府県</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">95</span>
+                            <span class="region-stat-label">市町村</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">43</span>
+                            <span class="region-stat-label">補助金</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="region/kyushu-okinawa.html" class="region-card" style="opacity: 0.6; pointer-events: none;">
+                    <div class="region-name">
+                        九州・沖縄
+                        <span class="region-icon">🏝️</span>
+                    </div>
+                    <div class="region-stats">
+                        <div class="region-stat">
+                            <span class="region-stat-number">-</span>
+                            <span class="region-stat-label">準備中</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">-</span>
+                            <span class="region-stat-label">準備中</span>
+                        </div>
+                        <div class="region-stat">
+                            <span class="region-stat-number">-</span>
+                            <span class="region-stat-label">準備中</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Category Guide -->
+        <section class="section" id="categories">
+            <h2 class="section-title">
+                <i class="fas fa-users"></i>
+                属性別ガイド
+            </h2>
+            <p class="section-description">
+                あなたの働き方や状況に合わせて、最適な補助金制度を探しましょう。
+            </p>
+            
+            <div class="category-grid">
+                <a href="category/freelance.html" class="category-card">
+                    <div class="category-icon">💼</div>
+                    <h3 class="category-name">フリーランス向け</h3>
+                    <p class="category-description">
+                        個人事業主・フリーランス向けの補助金制度を紹介。テレワーク環境整備費、交通費補助など。
+                    </p>
+                </a>
+                
+                <a href="category/corporate.html" class="category-card">
+                    <div class="category-icon">🏢</div>
+                    <h3 class="category-name">法人向け</h3>
+                    <p class="category-description">
+                        企業のワーケーション導入を支援する補助金制度。研修費用、施設利用料の補助など。
+                    </p>
+                </a>
+                
+                <a href="category/relocation.html" class="category-card">
+                    <div class="category-icon">🏡</div>
+                    <h3 class="category-name">移住検討者向け</h3>
+                    <p class="category-description">
+                        地方移住を検討している方向けの支援制度。お試し移住、住宅取得支援など。
+                    </p>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Top Prefectures -->
+        <section class="section" id="top">
+            <h2 class="section-title">
+                <i class="fas fa-trophy"></i>
+                補助金制度が充実している都道府県 TOP5
+            </h2>
+            <p class="section-description">
+                ワーケーション補助金の充実度ランキング。補助金の件数と内容で評価しています。
+            </p>
+            
+            <ul class="top-list">
+                <li class="top-item">
+                    <div class="top-rank">🥇</div>
+                    <div class="top-prefecture">
+                        <div class="top-prefecture-name">高知県</div>
+                        <div class="top-prefecture-info">34市町村全てで補助金あり・最大30,000円/人</div>
+                    </div>
+                    <div class="top-count">
+                        34<br>
+                        <span class="top-count-label">件</span>
+                    </div>
+                </li>
+                
+                <li class="top-item">
+                    <div class="top-rank">🥈</div>
+                    <div class="top-prefecture">
+                        <div class="top-prefecture-name">福島県</div>
+                        <div class="top-prefecture-info">会津・南会津エリアを中心に充実した支援</div>
+                    </div>
+                    <div class="top-count">
+                        10<br>
+                        <span class="top-count-label">件</span>
+                    </div>
+                </li>
+                
+                <li class="top-item">
+                    <div class="top-rank">🥉</div>
+                    <div class="top-prefecture">
+                        <div class="top-prefecture-name">愛媛県</div>
+                        <div class="top-prefecture-info">南予エリア9市町で広域連携した支援</div>
+                    </div>
+                    <div class="top-count">
+                        9<br>
+                        <span class="top-count-label">件</span>
+                    </div>
+                </li>
+                
+                <li class="top-item">
+                    <div class="top-rank">4位</div>
+                    <div class="top-prefecture">
+                        <div class="top-prefecture-name">北海道</div>
+                        <div class="top-prefecture-info">広大な自然環境・4市町で補助金制度あり</div>
+                    </div>
+                    <div class="top-count">
+                        4<br>
+                        <span class="top-count-label">件</span>
+                    </div>
+                </li>
+                
+                <li class="top-item">
+                    <div class="top-rank">5位</div>
+                    <div class="top-prefecture">
+                        <div class="top-prefecture-name">群馬県・長野県</div>
+                        <div class="top-prefecture-info">山岳リゾート・温泉地でのワーケーション支援</div>
+                    </div>
+                    <div class="top-count">
+                        2<br>
+                        <span class="top-count-label">件</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2 class="cta-title">あなたに最適なワーケーション先を見つけよう</h2>
+            <p class="cta-description">
+                全国880市町村の詳細情報から、理想のワーケーション先を探せます。
+            </p>
+            <a href="../index.html" class="cta-button">
+                全国マップから探す →
+            </a>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">WORKERTRIP</div>
+        <p>
+            <a href="../index.html" class="footer-link">トップ</a>
+            <a href="../about.html" class="footer-link">About</a>
+            <a href="../contact.html" class="footer-link">Contact</a>
+        </p>
+        <p style="margin-top: 1rem; opacity: 0.7;">© 2026 WORKERTRIP. All rights reserved.</p>
+    </footer>
+</body>
+</html>

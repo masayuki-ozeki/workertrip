@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北海道・東北エリア ワーケーション補助金ガイド | WORKERTRIP</title>
+    <meta name="description" content="北海道・東北7県のワーケーション補助金情報。福島県10件、北海道4件など、合計17件の補助金制度を詳しく解説。">
+    <link rel="canonical" href="https://workertrip.jp/subsidy/region/hokkaido-tohoku.html">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .header {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; }
+        .breadcrumb { margin-top: 1rem; opacity: 0.9; }
+        .breadcrumb a { color: white; text-decoration: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 1rem; }
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+        }
+        .prefecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .prefecture-card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .prefecture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(66, 153, 225, 0.2);
+            border-color: #4299e1;
+        }
+        .prefecture-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        .prefecture-stat {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #4299e1;
+            margin-bottom: 0.5rem;
+        }
+        .prefecture-label { font-size: 0.9rem; color: #718096; }
+        .subsidy-list { list-style: none; }
+        .subsidy-item {
+            background: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+        .subsidy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .subsidy-municipality {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        .subsidy-prefecture-tag {
+            background: #4299e1;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .subsidy-description {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #4299e1;
+            display: block;
+        }
+        .stat-label { font-size: 1rem; color: #718096; margin-top: 0.5rem; }
+        .cta-section {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .cta-button {
+            padding: 1rem 2rem;
+            background: white;
+            color: #4299e1;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8rem; }
+            .prefecture-grid { grid-template-columns: 1fr; }
+            .subsidy-header { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🗻 北海道・東北エリア</h1>
+        <p>ワーケーション補助金ガイド</p>
+        <div class="breadcrumb">
+            <a href="../../index.html">トップ</a> / 
+            <a href="../index.html">補助金ガイド</a> / 
+            北海道・東北
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Overview -->
+        <section class="section">
+            <h2 class="section-title">エリア概要</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">都道府県</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">406</span>
+                    <span class="stat-label">市町村</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">17</span>
+                    <span class="stat-label">補助金制度</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">4.2%</span>
+                    <span class="stat-label">補助金実施率</span>
+                </div>
+            </div>
+            
+            <p style="line-height: 1.8; color: #4a5568;">
+                北海道・東北エリアは、<strong>雄大な自然環境</strong>と<strong>四季折々の美しい風景</strong>が魅力のワーケーション先です。
+                特に<strong>福島県は会津・南会津エリアを中心に10件</strong>の補助金制度があり、
+                <strong>北海道は4市町</strong>で独自の支援を実施しています。
+                <br><br>
+                温泉地や高原リゾート、歴史的な街並みなど、多様なワーケーション環境が整っており、
+                夏は涼しく快適に、冬は雪景色を楽しみながら働くことができます。
+            </p>
+        </section>
+        
+        <!-- Prefectures -->
+        <section class="section">
+            <h2 class="section-title">都道府県別 補助金情報</h2>
+            
+            <div class="prefecture-grid">
+                <a href="../../fukushima/index.html" class="prefecture-card">
+                    <div class="prefecture-name">福島県</div>
+                    <div class="prefecture-stat">10</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+                
+                <a href="../../hokkaido/index.html" class="prefecture-card">
+                    <div class="prefecture-name">北海道</div>
+                    <div class="prefecture-stat">4</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+                
+                <a href="../../aomori/index.html" class="prefecture-card">
+                    <div class="prefecture-name">青森県</div>
+                    <div class="prefecture-stat">1</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+                
+                <a href="../../iwate/index.html" class="prefecture-card">
+                    <div class="prefecture-name">岩手県</div>
+                    <div class="prefecture-stat">1</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+                
+                <a href="../../akita/index.html" class="prefecture-card">
+                    <div class="prefecture-name">秋田県</div>
+                    <div class="prefecture-stat">1</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+                
+                <a href="../../miyagi/index.html" class="prefecture-card">
+                    <div class="prefecture-name">宮城県</div>
+                    <div class="prefecture-stat">0</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+                
+                <a href="../../yamagata/index.html" class="prefecture-card">
+                    <div class="prefecture-name">山形県</div>
+                    <div class="prefecture-stat">0</div>
+                    <div class="prefecture-label">補助金制度</div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- 福島県 Subsidies -->
+        <section class="section">
+            <h2 class="section-title">🥇 福島県の補助金制度（10件）</h2>
+            
+            <ul class="subsidy-list">
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">会津若松市</div>
+                        <div class="subsidy-prefecture-tag">福島県</div>
+                    </div>
+                    <p class="subsidy-description">
+                        <strong>歴史と文化の街でのワーケーション</strong><br>
+                        鶴ヶ城、白虎隊で知られる会津若松市。歴史的な街並みと温泉、
+                        充実したコワーキングスペースでワーケーションを支援。
+                    </p>
+                </li>
+                
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">南会津町</div>
+                        <div class="subsidy-prefecture-tag">福島県</div>
+                    </div>
+                    <p class="subsidy-description">
+                        <strong>大自然の中でのリモートワーク</strong><br>
+                        尾瀬国立公園の玄関口。豊かな自然環境と温泉地で、
+                        リフレッシュしながら働ける環境を提供。
+                    </p>
+                </li>
+                
+                <li class="subsidy-item">
+                    <p style="color: #718096; text-align: center;">
+                        <strong>その他8市町村でも補助金制度あり</strong><br>
+                        各市町村の詳細は <a href="../../fukushima/municipalities.html" style="color: #4299e1;">福島県市町村一覧</a> をご覧ください
+                    </p>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- 北海道 Subsidies -->
+        <section class="section">
+            <h2 class="section-title">🥈 北海道の補助金制度（4件）</h2>
+            
+            <ul class="subsidy-list">
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">札幌市</div>
+                        <div class="subsidy-prefecture-tag">北海道</div>
+                    </div>
+                    <p class="subsidy-description">
+                        <strong>都市型ワーケーション</strong><br>
+                        北海道最大の都市・札幌市。充実した都市機能と自然環境の両立。
+                        コワーキングスペースやカフェも豊富。
+                    </p>
+                </li>
+                
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">ニセコ町</div>
+                        <div class="subsidy-prefecture-tag">北海道</div>
+                    </div>
+                    <p class="subsidy-description">
+                        <strong>世界的リゾート地でのワーケーション</strong><br>
+                        国際的なスキーリゾート・ニセコ。夏はアウトドア、冬はスキーを楽しみながら、
+                        高速Wi-Fi完備の施設でリモートワーク。
+                    </p>
+                </li>
+                
+                <li class="subsidy-item">
+                    <p style="color: #718096; text-align: center;">
+                        <strong>その他2市町でも補助金制度あり</strong><br>
+                        詳細は <a href="../../hokkaido/municipalities.html" style="color: #4299e1;">北海道市町村一覧</a> をご覧ください
+                    </p>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- その他の県 -->
+        <section class="section">
+            <h2 class="section-title">その他の補助金制度（3件）</h2>
+            
+            <ul class="subsidy-list">
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">青森県（1件）</div>
+                        <div class="subsidy-prefecture-tag">青森県</div>
+                    </div>
+                    <p class="subsidy-description">
+                        りんごと海の幸、世界遺産白神山地。<br>
+                        <a href="../../aomori/municipalities.html" style="color: #4299e1;">青森県の詳細を見る →</a>
+                    </p>
+                </li>
+                
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">岩手県（1件）</div>
+                        <div class="subsidy-prefecture-tag">岩手県</div>
+                    </div>
+                    <p class="subsidy-description">
+                        三陸海岸と盛岡の歴史。<br>
+                        <a href="../../iwate/municipalities.html" style="color: #4299e1;">岩手県の詳細を見る →</a>
+                    </p>
+                </li>
+                
+                <li class="subsidy-item">
+                    <div class="subsidy-header">
+                        <div class="subsidy-municipality">秋田県（1件）</div>
+                        <div class="subsidy-prefecture-tag">秋田県</div>
+                    </div>
+                    <p class="subsidy-description">
+                        秋田杉と温泉、田沢湖の美しさ。<br>
+                        <a href="../../akita/municipalities.html" style="color: #4299e1;">秋田県の詳細を見る →</a>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">北の大地でワーケーションを始めよう</h2>
+            <p style="font-size: 1.1rem; opacity: 0.95;">
+                17件の補助金制度から、あなたに最適な支援を見つけましょう
+            </p>
+            <div class="cta-buttons">
+                <a href="../index.html" class="cta-button">← 補助金ガイドTOP</a>
+                <a href="../../index.html" class="cta-button">全国マップから探す</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

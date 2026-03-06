@@ -1,274 +1,493 @@
-# 新しい都道府県の追加手順
+# 都道府県追加マニュアル
 
-## 📋 概要
+新しい都道府県データ（`js/data-{prefecture}.js`）をアップロードした後、**AIアシスタントが自動的にHTMLファイル作成から全ての設定を完了します**。
 
-WORKERTRIPに新しい都道府県を追加する際の手順をまとめました。
+## 🤖 自動化方針
 
-## 🗂️ ファイル構成
+**ユーザーがやること**: データファイル（`js/data-{prefecture}.js`）をアップロードするだけ
 
-```
-WORKERTRIP/
-├── {prefecture}/              # 都道府県フォルダ (例: hokkaido/, okinawa/)
-│   ├── index.html            # 都道府県トップページ
-│   └── municipalities.html   # 自治体一覧ページ
-├── js/
-│   ├── data-{prefecture}.js  # 都道府県データファイル ← NEW!
-│   ├── main.js               # 都道府県ページ用JS（共通）
-│   └── municipalities.js     # 自治体一覧用JS（共通）
-└── css/
-    └── style.css             # スタイル（共通）
-```
+**AIアシスタントがやること**:
+1. ✅ フォルダ構造作成（{prefecture}/index.html, municipalities.html）
+2. ✅ メタタグ・ヘッダー・フッターの県名修正（9箇所）
+3. ✅ 市町村数・補助金件数の自動カウント・反映
+4. ✅ 県の特色に合わせたヒーローテキスト・特徴説明の作成
+5. ✅ アイキャッチ画像の検索・設定
+6. ✅ 全国トップページ（js/main-japan.js）への追加
+7. ✅ README.md の掲載状況更新
 
-## 🚀 追加手順
-
-### ステップ1: 長野県フォルダをコピー
-
-```bash
-# 長野県フォルダを新しい都道府県名でコピー
-cp -r nagano/ hokkaido/
-```
-
-または手動で：
-1. `nagano` フォルダ全体をコピー
-2. 新しい都道府県名にリネーム（例: `hokkaido`）
-
-### ステップ2: データファイルを作成
-
-```bash
-# テンプレートをコピー
-cp js/data-template.js js/data-hokkaido.js
-```
-
-#### data-hokkaido.js の編集
-
-```javascript
-const municipalitiesData = [
-    {
-        name: "札幌市",
-        url: "https://www.city.sapporo.jp/",
-        workationUrl: "https://...",
-        type: "dedicated",
-        hasSubsidy: true,
-        subsidyInfo: {
-            name: "補助金制度名",
-            amount: "上限30万円",
-            period: "〜2026年3月31日",
-            url: "https://...",
-            description: "企業向け支援"
-        },
-        description: "札幌市のワーケーション取り組み説明"
-    },
-    // 他の自治体を追加...
-];
-```
-
-### ステップ3: HTMLファイルを更新
-
-#### hokkaido/index.html
-
-以下の箇所を更新：
-
-**1. メタタグ（head内）**
-```html
-<title>北海道ワーケーション情報 – WORKERTRIP</title>
-<meta name="description" content="北海道○○自治体のワーケーション取り組みと2026年度補助金情報。">
-<link rel="canonical" href="https://workertrip.jp/hokkaido/">
-<meta property="og:url" content="https://workertrip.jp/hokkaido/">
-```
-
-**2. スクリプト読み込み（bodyの最後）**
-```html
-<script src="../js/data-hokkaido.js"></script>  ← データファイル名を変更
-<script src="../js/main.js"></script>
-```
-
-**3. ブランド名・タイトル**
-```html
-<!-- ナビゲーション -->
-<span class="brand-text">WORKERTRIP 北海道</span>
-
-<!-- ヒーローセクション -->
-<h1 class="hero-title">自然に囲まれた<br>新しい働き方を、北海道で</h1>
-
-<!-- 統計情報 -->
-<div class="stat-number">○○</div>  ← 自治体数
-<div class="stat-number">○</div>   ← 補助金数
-```
-
-**4. エリア名**
-```html
-<!-- エリア別検索のエリア名を都道府県に合わせて変更 -->
-<h4>道央エリア</h4>
-<h4>道南エリア</h4>
-<h4>道北エリア</h4>
-<h4>道東エリア</h4>
-```
-
-**5. フッター**
-```html
-<h4 class="footer-title">
-    <i class="fas fa-snowflake"></i>  ← アイコンを変更（任意）
-    <span class="brand-text">WORKERTRIP 北海道</span>
-</h4>
-<p>&copy; 2025 WORKERTRIP. All rights reserved.</p>
-```
-
-#### hokkaido/municipalities.html
-
-同様に以下を更新：
-
-```html
-<!-- メタタグ -->
-<title>北海道自治体一覧 – WORKERTRIP</title>
-<link rel="canonical" href="https://workertrip.jp/hokkaido/municipalities.html">
-
-<!-- スクリプト -->
-<script src="../js/data-hokkaido.js"></script>
-<script src="../js/municipalities.js"></script>
-
-<!-- ページタイトル -->
-<h1 class="page-title">北海道 自治体一覧</h1>
-<p class="page-subtitle">北海道○○自治体のワーケーション情報一覧</p>
-```
-
-### ステップ4: 全国トップページに追加
-
-#### js/main-japan.js
-
-```javascript
-const prefecturesData = [
-    // ... 既存の都道府県
-    { 
-        name: "北海道", 
-        region: "hokkaido-tohoku", 
-        status: "available",           // ← "coming-soon" から変更
-        url: "hokkaido/index.html",    // ← URLを設定
-        municipalities: 45,            // ← 自治体数
-        subsidies: 3                   // ← 補助金数
-    },
-    // ...
-];
-```
-
-#### index.html の注目エリア
-
-```html
-<a href="hokkaido/index.html" class="featured-card">
-    <div class="featured-image" style="background-image: url('画像URL');">
-        <div class="featured-overlay"></div>
-    </div>
-    <div class="featured-content">
-        <div class="featured-badge">
-            <i class="fas fa-check-circle"></i> 情報掲載中
-        </div>
-        <h3 class="featured-title">北海道</h3>
-        <p class="featured-text">
-            雄大な大地と豊かな自然。札幌、ニセコ、富良野など魅力的なエリアが充実。
-        </p>
-        <div class="featured-stats">
-            <span><i class="fas fa-map-marker-alt"></i> 45自治体対応</span>
-            <span><i class="fas fa-star"></i> 3件補助金</span>
-        </div>
-    </div>
-</a>
-```
-
-### ステップ5: 動作確認
-
-#### チェックリスト
-
-- [ ] `hokkaido/index.html` をブラウザで開く
-- [ ] データが正しく表示されるか確認
-- [ ] 自治体一覧ページが動作するか確認
-- [ ] 検索・フィルター機能が動作するか確認
-- [ ] 全国トップから遷移できるか確認
-- [ ] リンクが正しく動作するか確認
-
-#### デバッグ方法
-
-ブラウザの開発者ツール（F12）で：
-1. Console タブでエラーがないか確認
-2. Network タブで `data-hokkaido.js` が読み込まれているか確認
-
-## 📝 カスタマイズのヒント
-
-### テーマカラーの変更（任意）
-
-各都道府県のイメージに合わせて色を変更できます：
-
-```css
-/* css/style.css に追加 */
-.hokkaido-theme {
-    --primary-color: #4a90e2;  /* 北海道の青空イメージ */
-    --primary-light: #5da3f5;
-    --primary-dark: #3a7bc8;
-}
-```
-
-### アイコンの変更
-
-```html
-<!-- 北海道: 雪 -->
-<i class="fas fa-snowflake"></i>
-
-<!-- 沖縄: 太陽・海 -->
-<i class="fas fa-sun"></i>
-
-<!-- 京都: 寺 -->
-<i class="fas fa-torii-gate"></i>
-
-<!-- 富士山周辺: 山 -->
-<i class="fas fa-mountain"></i>
-```
-
-## 🔧 トラブルシューティング
-
-### 問題: データが表示されない
-
-**原因**: データファイルのパスが間違っている
-
-**解決**:
-```html
-<!-- 正しいパス -->
-<script src="../js/data-hokkaido.js"></script>
-
-<!-- 間違い例 -->
-<script src="js/data-hokkaido.js"></script>  ← ../ がない
-```
-
-### 問題: JavaScriptエラー
-
-**原因**: JSON構文エラー
-
-**解決**: 
-- カンマ、括弧、引用符を確認
-- オンラインJSON検証ツールで確認
-
-### 問題: 全国トップから遷移できない
-
-**原因**: URLが間違っている
-
-**解決**: `js/main-japan.js` のURLを確認
-```javascript
-url: "hokkaido/index.html"  // 正しい
-url: "/hokkaido/index.html" // 間違い（スラッシュ不要）
-```
-
-## 📚 参考
-
-- データファイルテンプレート: `js/data-template.js`
-- 長野県の実装: `nagano/` フォルダ
-- データファイル例: `js/data-nagano.js`
-
-## 🎯 完成後の確認
-
-1. ブラウザで動作確認
-2. レスポンシブデザイン確認（モバイル・タブレット）
-3. リンク切れチェック
-4. OGP画像の表示確認
-5. 検索・フィルター機能の動作確認
+**作業方針**: ゆっくり1県ずつ、確実に完成させる
 
 ---
 
-**更新日**: 2025年3月5日  
-**対象バージョン**: WORKERTRIP v2.1.0
+## 📖 このマニュアルの使い方
+
+このマニュアルは、**AIアシスタントが作業を行う際の完全チェックリスト**です。ユーザーは内容を理解する必要はありませんが、どのような作業が行われるかを確認できます。
+
+---
+
+## 🔄 作業フロー図
+
+```
+┌─────────────────────────────────────────┐
+│ ユーザー: data-{prefecture}.js アップロード │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│ AIアシスタント: 以下を自動実行             │
+├─────────────────────────────────────────┤
+│ Step 1: データ解析                        │
+│   ├ 市町村数カウント                      │
+│   ├ 補助金件数カウント                    │
+│   └ 県の特徴把握                         │
+├─────────────────────────────────────────┤
+│ Step 2: アイキャッチ画像検索              │
+│   └ その県を代表する風景画像を検索        │
+├─────────────────────────────────────────┤
+│ Step 3: フォルダ・HTML作成                │
+│   ├ {prefecture}/index.html              │
+│   └ {prefecture}/municipalities.html     │
+├─────────────────────────────────────────┤
+│ Step 4: 9箇所の修正実行                   │
+│   ├ メタタグ（title, description, OGP）   │
+│   ├ ヘッダー・フッター（県名）             │
+│   ├ ヒーロー（タイトル・画像）             │
+│   ├ 統計数値（市町村数・補助金数）         │
+│   ├ 特徴セクション（理由・自然環境説明）    │
+│   ├ CTAセクション（数値・県名）            │
+│   └ スクリプト参照（data-{prefecture}.js） │
+├─────────────────────────────────────────┤
+│ Step 5: 全国トップページ更新               │
+│   └ js/main-japan.js にデータ追加         │
+├─────────────────────────────────────────┤
+│ Step 6: README.md 更新                    │
+│   └ 掲載状況・ファイル構造を更新          │
+├─────────────────────────────────────────┤
+│ Step 7: 動作確認                          │
+│   └ 全てのリンク・数値が正しいか確認      │
+└──────────────┬──────────────────────────┘
+               ↓
+┌─────────────────────────────────────────┐
+│ 完了報告 & Git コミットコマンド提示        │
+└─────────────────────────────────────────┘
+```
+
+**重要**: 各ステップはゆっくり確実に実行し、エラーが出たら即座に修正します。
+
+---
+
+## 📋 事前準備
+
+### 1. データファイルの確認
+
+新しい都道府県データファイルをアップロード：
+- ファイル名: `js/data-{prefecture}.js`（例：`data-aichi.js`）
+- 配列名: `municipalitiesData`
+- 必須フィールド: `name`, `url`, `workationUrl`, `type`, `hasSubsidy`, `description`
+
+### 2. 必要な情報を収集
+
+以下の情報を事前に調べておく：
+- **都道府県名**: 例）愛知県
+- **市町村数**: データファイルの配列長
+- **補助金件数**: `hasSubsidy: true` の数
+- **アイキャッチ画像URL**: その都道府県を代表する風景画像
+- **ヒーローコピー**: 都道府県の特徴を表す一文（20〜30文字）
+
+---
+
+## 🚀 実装手順（5ステップ）
+
+### Step 1: フォルダ構造作成
+
+新しい都道府県用のフォルダとHTMLファイルを作成します。
+
+```bash
+# 例：愛知県の場合
+aichi/
+├── index.html           # 都道府県トップページ
+└── municipalities.html  # 自治体一覧ページ
+```
+
+#### テンプレートをコピー
+
+既存の県（埼玉など）からコピーして修正：
+
+```bash
+# 埼玉県をテンプレートとしてコピー
+cp -r saitama/ aichi/
+```
+
+---
+
+### Step 2: `index.html` の編集
+
+以下の **9箇所** を必ず修正してください：
+
+1. メタタグ（title, description, canonical, og:title, og:url, og:image）
+2. ヘッダーブランドテキスト（2箇所：ナビゲーション・フッター）
+3. ヒーローセクション（タイトル・サブタイトル・統計数値）
+4. **特徴セクション**（タイトル・自然環境の説明）
+5. **CTAセクション**（市町村数・補助金件数・県名）
+6. **フッター説明文**（県名）
+7. マップセクション（県名）
+8. スクリプト参照先（data-{prefecture}.js）
+
+---
+
+#### 2-1. メタタグの修正
+
+```html
+<!-- 変更前 -->
+<title>埼玉県ワーケーション情報 – WORKERTRIP</title>
+<meta name="description" content="埼玉県63市町村のワーケーション情報...">
+<link rel="canonical" href="https://workertrip.jp/saitama/">
+<meta property="og:title" content="埼玉県ワーケーション情報 – WORKERTRIP">
+<meta property="og:url" content="https://workertrip.jp/saitama/">
+<meta property="og:image" content="https://...">
+
+<!-- 変更後（愛知県の例） -->
+<title>愛知県ワーケーション情報 – WORKERTRIP</title>
+<meta name="description" content="愛知県54市町村のワーケーション情報...">
+<link rel="canonical" href="https://workertrip.jp/aichi/">
+<meta property="og:title" content="愛知県ワーケーション情報 – WORKERTRIP">
+<meta property="og:url" content="https://workertrip.jp/aichi/">
+<meta property="og:image" content="https://新しいアイキャッチ画像URL">
+```
+
+#### 2-2. ヘッダーの修正
+
+```html
+<!-- 変更前 -->
+<span class="brand-text">WORKERTRIP 埼玉</span>
+
+<!-- 変更後 -->
+<span class="brand-text">WORKERTRIP 愛知</span>
+```
+
+#### 2-3. ヒーローセクションの修正
+
+```html
+<!-- ヒーロー画像 -->
+<div class="hero-image" style="background-image: url('新しいアイキャッチ画像URL');"></div>
+
+<!-- ヒーローテキスト -->
+<h1 class="hero-title">
+    産業と文化が融合した<br>
+    新しい働き方を、愛知で
+</h1>
+<p class="hero-subtitle">
+    ものづくりの街で、イノベーションとワーケーションが出会う
+</p>
+```
+
+#### 2-4. 統計情報の修正
+
+```html
+<!-- 市町村数 -->
+<div class="stat-number">54</div>
+<div class="stat-label">市町村</div>
+
+<!-- 補助金件数 -->
+<div class="stat-number">3</div>
+<div class="stat-label">2026補助金</div>
+```
+
+#### 2-5. 特徴セクション（Features Section）の修正
+
+```html
+<!-- セクションタイトル -->
+<h2 class="section-title">愛知でワーケーションを始める理由</h2>
+
+<!-- 豊かな自然環境カードの説明文 -->
+<div class="feature-card">
+    <div class="feature-icon">
+        <i class="fas fa-mountain"></i>
+    </div>
+    <h3>豊かな自然環境</h3>
+    <p>伊勢湾、三河湾、知多半島。都市と自然が調和し、ものづくりの街ならではの充実したインフラ環境です。</p>
+</div>
+```
+
+**重要**: 「豊かな自然環境」の説明文は、各都道府県の特色（山岳・海岸・温泉・自然遺産など）を反映させてください。
+
+#### 2-6. CTAセクション（Call to Action）の修正
+
+```html
+<p class="cta-text">
+    54の市町村情報、3件の補助金制度。<br>
+    愛知でのワーケーションに必要な情報がすべてここに。
+</p>
+```
+
+**注意**: 市町村数と補助金件数は、データファイルから正確にカウントした数値を使用してください。
+
+#### 2-7. マップセクションの修正
+
+```html
+<h2 class="section-title">愛知県 市町村マップ</h2>
+<p class="section-subtitle">
+    地図をクリックして、各自治体のワーケーション情報をチェック
+</p>
+```
+
+#### 2-8. フッターの修正
+
+```html
+<!-- ブランドテキスト -->
+<span class="brand-text">WORKERTRIP 愛知</span>
+
+<!-- フッター説明文 -->
+<p class="footer-text">
+    愛知県でのワーケーション情報を発信する総合ポータルサイトです。
+</p>
+
+<!-- コピーライト -->
+<p>&copy; 2025 株式会社WorkerTrip. All rights reserved.</p>
+```
+
+#### 2-9. スクリプトの修正
+
+```html
+<!-- 変更前 -->
+<script src="../js/data-saitama.js"></script>
+
+<!-- 変更後 -->
+<script src="../js/data-aichi.js"></script>
+```
+
+#### 2-7. フッターの修正
+
+```html
+<span class="brand-text">WORKERTRIP 愛知</span>
+<p>&copy; 2025 株式会社WorkerTrip. All rights reserved.</p>
+```
+
+---
+
+### Step 3: `municipalities.html` の編集
+
+#### 3-1. メタタグの修正
+
+```html
+<title>愛知県市町村一覧 – WORKERTRIP</title>
+<meta name="description" content="愛知県54市町村のワーケーション情報一覧...">
+<link rel="canonical" href="https://workertrip.jp/aichi/municipalities.html">
+```
+
+#### 3-2. ヘッダーの修正
+
+```html
+<span class="brand-text">WORKERTRIP 愛知</span>
+```
+
+#### 3-3. ページタイトルの修正
+
+```html
+<h1 class="page-title">自治体一覧</h1>
+<p class="page-subtitle">
+    愛知県54市町村のワーケーション取り組み情報<br>
+    専用ページ、PDFなどで検索・比較できます
+</p>
+```
+
+#### 3-4. 検索プレースホルダーの修正
+
+```html
+<input 
+    type="text" 
+    id="searchInput" 
+    class="search-input" 
+    placeholder="市町村名で検索...（例：名古屋市、豊田市）"
+>
+```
+
+#### 3-5. 結果カウントの修正
+
+```html
+<span id="resultCount">54</span> 件の市町村が見つかりました
+```
+
+#### 3-6. スクリプトの修正
+
+```html
+<script src="../js/data-aichi.js"></script>
+<script src="../js/municipalities.js"></script>
+```
+
+---
+
+### Step 4: 全国トップページ（`index.html`）への追加
+
+`js/main-japan.js` のデータ配列に新しい県を追加：
+
+```javascript
+const prefecturesData = [
+    // 既存のデータ...
+    
+    // 新規追加
+    {
+        name: "愛知県",
+        region: "chubu",
+        status: "available",
+        url: "aichi/index.html",
+        municipalities: 54,
+        subsidies: 3
+    },
+    
+    // その他...
+];
+```
+
+---
+
+### Step 5: アイキャッチ画像の検索と設定
+
+#### 画像検索のポイント
+
+1. **検索キーワード例**:
+   - 「{都道府県名} 風景」
+   - 「{都道府県名} 観光 名所」
+   - 「{都道府県名} 自然」
+
+2. **推奨画像サイト**:
+   - Unsplash: https://unsplash.com/
+   - Pexels: https://www.pexels.com/ja-jp/
+   - Pixabay: https://pixabay.com/ja/
+
+3. **画像要件**:
+   - 横長（16:9 または 3:2）
+   - 高解像度（最低1920×1080px）
+   - 商用利用可能
+   - その県を代表する風景
+
+4. **画像URLの取得**:
+   ```
+   例：Unsplashの場合
+   https://images.unsplash.com/photo-XXXXXXXXX?w=1920&h=1080&fit=crop
+   ```
+
+---
+
+## 📊 確認チェックリスト
+
+### index.html
+
+- [ ] `<title>` タグ変更
+- [ ] メタdescription変更
+- [ ] Canonical URL変更
+- [ ] OGP title変更
+- [ ] OGP URL変更
+- [ ] OGP image変更
+- [ ] ヘッダー県名変更（2箇所：ナビ＋フッター）
+- [ ] ヒーロー背景画像変更
+- [ ] ヒーローテキスト変更
+- [ ] 市町村数変更
+- [ ] 補助金件数変更
+- [ ] マップセクション県名変更
+- [ ] スクリプトファイル名変更
+
+### municipalities.html
+
+- [ ] `<title>` タグ変更
+- [ ] メタdescription変更
+- [ ] Canonical URL変更
+- [ ] ヘッダー県名変更
+- [ ] ページタイトル県名変更
+- [ ] 市町村数変更
+- [ ] 検索プレースホルダー例変更
+- [ ] 結果カウント初期値変更
+- [ ] スクリプトファイル名変更
+
+### 全国トップページ（index.html）
+
+- [ ] `js/main-japan.js` にデータ追加
+
+### 動作確認
+
+- [ ] 都道府県ページが正しく表示される
+- [ ] 自治体一覧ページが正しく表示される
+- [ ] 検索・フィルター機能が動作する
+- [ ] 全国トップから遷移できる
+- [ ] 統計数値が正しい
+
+---
+
+## 🛠️ 便利なコマンド
+
+### 一括置換（macOS/Linux）
+
+```bash
+# saitamaをaichiに一括置換
+cd aichi/
+sed -i '' 's/埼玉/愛知/g' index.html municipalities.html
+sed -i '' 's/saitama/aichi/g' index.html municipalities.html
+sed -i '' 's/63/54/g' municipalities.html  # 市町村数
+```
+
+### Git操作
+
+```bash
+# 新県追加のコミット
+git add aichi/ js/data-aichi.js js/main-japan.js
+git commit -m "Add: 愛知県ページ追加（54市町村、3補助金）"
+git push origin main
+```
+
+---
+
+## 📝 README.md への追記
+
+新県追加後、`README.md` の掲載状況セクションも更新：
+
+```markdown
+### 現在の掲載状況
+
+- **全国トップページ**: 47都道府県選択機能
+- **掲載中**: 10県・433市町村・20件の補助金制度
+  - **長野県**: 48自治体（補助金2件）※エリア分け機能あり
+  - **山梨県**: 27自治体 ※エリア分け機能あり
+  - **新潟県**: 30自治体（補助金1件）※エリア分け機能あり
+  - **埼玉県**: 63市町村
+  - **千葉県**: 54市町村（補助金1件）
+  - **和歌山県**: 30市町村
+  - **福島県**: 59市町村（補助金10件）
+  - **神奈川県**: 33市町村（補助金1件）
+  - **群馬県**: 35市町村（補助金2件）
+  - **愛知県**: 54市町村（補助金3件）← 新規追加
+- **その他都道府県**: 順次展開予定
+```
+
+---
+
+## ⏱️ 所要時間目安
+
+| 作業 | 所要時間 |
+|-----|---------|
+| フォルダ・ファイルコピー | 1分 |
+| index.html編集 | 5〜7分 |
+| municipalities.html編集 | 3〜5分 |
+| アイキャッチ画像検索 | 3〜5分 |
+| main-japan.js追加 | 1分 |
+| 動作確認 | 2〜3分 |
+| **合計** | **約15〜22分** |
+
+---
+
+## 🎯 次回以降の効率化
+
+### テンプレート化
+
+よく使う県（埼玉など）を「テンプレート県」として保存しておき、コピー→一括置換で効率化できます。
+
+### スクリプト化（将来的に）
+
+将来的には、以下のようなスクリプトで自動化も可能：
+
+```bash
+# 使用例（構想）
+./add-prefecture.sh aichi 愛知県 54 3 "https://image-url"
+```
+
+---
+
+この手順書に従えば、新しい都道府県を約15〜20分で追加できます！
