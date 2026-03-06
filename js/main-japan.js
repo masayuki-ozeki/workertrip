@@ -12,54 +12,54 @@ const prefecturesData = [
     { name: "福島県", region: "hokkaido-tohoku", status: "available", url: "fukushima/index.html", municipalities: 59, subsidies: 10 },
     
     // 関東
-    { name: "茨城県", region: "kanto", status: "coming-soon", url: "#" },
-    { name: "栃木県", region: "kanto", status: "coming-soon", url: "#" },
+    { name: "茨城県", region: "kanto", status: "available", url: "ibaraki/index.html", municipalities: 45, subsidies: 2 },
+    { name: "栃木県", region: "kanto", status: "available", url: "tochigi/index.html", municipalities: 25, subsidies: 0 },
     { name: "群馬県", region: "kanto", status: "available", url: "gunma/index.html", municipalities: 35, subsidies: 2 },
     { name: "埼玉県", region: "kanto", status: "available", url: "saitama/index.html", municipalities: 63, subsidies: 0 },
     { name: "千葉県", region: "kanto", status: "available", url: "chiba/index.html", municipalities: 54, subsidies: 1 },
-    { name: "東京都", region: "kanto", status: "coming-soon", url: "#" },
+    { name: "東京都", region: "kanto", status: "available", url: "tokyo/index.html", municipalities: 62, subsidies: 5 },
     { name: "神奈川県", region: "kanto", status: "available", url: "kanagawa/index.html", municipalities: 33, subsidies: 1 },
     
     // 中部
     { name: "新潟県", region: "chubu", status: "available", url: "niigata/index.html", municipalities: 30, subsidies: 1 },
-    { name: "富山県", region: "chubu", status: "coming-soon", url: "#" },
-    { name: "石川県", region: "chubu", status: "coming-soon", url: "#" },
-    { name: "福井県", region: "chubu", status: "coming-soon", url: "#" },
+    { name: "富山県", region: "chubu", status: "available", url: "toyama/index.html", municipalities: 15, subsidies: 1 },
+    { name: "石川県", region: "chubu", status: "available", url: "ishikawa/index.html", municipalities: 19, subsidies: 1 },
+    { name: "福井県", region: "chubu", status: "available", url: "fukui/index.html", municipalities: 17, subsidies: 1 },
     { name: "山梨県", region: "chubu", status: "available", url: "yamanashi/index.html", municipalities: 27, subsidies: 0 },
     { name: "長野県", region: "chubu", status: "available", url: "nagano/index.html", municipalities: 48, subsidies: 2 },
-    { name: "岐阜県", region: "chubu", status: "coming-soon", url: "#" },
-    { name: "静岡県", region: "chubu", status: "coming-soon", url: "#" },
-    { name: "愛知県", region: "chubu", status: "coming-soon", url: "#" },
+    { name: "岐阜県", region: "chubu", status: "available", url: "gifu/index.html", municipalities: 42, subsidies: 1 },
+    { name: "静岡県", region: "chubu", status: "available", url: "shizuoka/index.html", municipalities: 35, subsidies: 1 },
+    { name: "愛知県", region: "chubu", status: "available", url: "aichi/index.html", municipalities: 54, subsidies: 1 },
     
     // 近畿
-    { name: "三重県", region: "kinki", status: "coming-soon", url: "#" },
-    { name: "滋賀県", region: "kinki", status: "coming-soon", url: "#" },
-    { name: "京都府", region: "kinki", status: "coming-soon", url: "#" },
-    { name: "大阪府", region: "kinki", status: "coming-soon", url: "#" },
-    { name: "兵庫県", region: "kinki", status: "coming-soon", url: "#" },
-    { name: "奈良県", region: "kinki", status: "coming-soon", url: "#" },
+    { name: "三重県", region: "kinki", status: "available", url: "mie/index.html", municipalities: 29, subsidies: 1 },
+    { name: "滋賀県", region: "kinki", status: "available", url: "shiga/index.html", municipalities: 19, subsidies: 1 },
+    { name: "京都府", region: "kinki", status: "available", url: "kyoto/index.html", municipalities: 26, subsidies: 1 },
+    { name: "大阪府", region: "kinki", status: "available", url: "osaka/index.html", municipalities: 43, subsidies: 1 },
+    { name: "兵庫県", region: "kinki", status: "available", url: "hyogo/index.html", municipalities: 41, subsidies: 1 },
+    { name: "奈良県", region: "kinki", status: "available", url: "nara/index.html", municipalities: 39, subsidies: 1 },
     { name: "和歌山県", region: "kinki", status: "available", url: "wakayama/index.html", municipalities: 30, subsidies: 0 },
     
     // 中国・四国
-    { name: "鳥取県", region: "chugoku-shikoku", status: "coming-soon", url: "#" },
-    { name: "島根県", region: "chugoku-shikoku", status: "coming-soon", url: "#" },
-    { name: "岡山県", region: "chugoku-shikoku", status: "coming-soon", url: "#" },
-    { name: "広島県", region: "chugoku-shikoku", status: "coming-soon", url: "#" },
-    { name: "山口県", region: "chugoku-shikoku", status: "coming-soon", url: "#" },
+    { name: "鳥取県", region: "chugoku-shikoku", status: "available", url: "tottori/index.html", municipalities: 19, subsidies: 1 },
+    { name: "島根県", region: "chugoku-shikoku", status: "available", url: "shimane/index.html", municipalities: 19, subsidies: 1 },
+    { name: "岡山県", region: "chugoku-shikoku", status: "available", url: "okayama/index.html", municipalities: 27, subsidies: 1 },
+    { name: "広島県", region: "chugoku-shikoku", status: "available", url: "hiroshima/index.html", municipalities: 23, subsidies: 1 },
+    { name: "山口県", region: "chugoku-shikoku", status: "available", url: "yamaguchi/index.html", municipalities: 19, subsidies: 2 },
     { name: "徳島県", region: "chugoku-shikoku", status: "available", url: "tokushima/index.html", municipalities: 24, subsidies: 0 },
     { name: "香川県", region: "chugoku-shikoku", status: "available", url: "kagawa/index.html", municipalities: 17, subsidies: 0 },
     { name: "愛媛県", region: "chugoku-shikoku", status: "available", url: "ehime/index.html", municipalities: 20, subsidies: 9 },
     { name: "高知県", region: "chugoku-shikoku", status: "available", url: "kochi/index.html", municipalities: 34, subsidies: 34 },
     
     // 九州・沖縄
-    { name: "福岡県", region: "kyushu-okinawa", status: "coming-soon", url: "#" },
-    { name: "佐賀県", region: "kyushu-okinawa", status: "coming-soon", url: "#" },
-    { name: "長崎県", region: "kyushu-okinawa", status: "coming-soon", url: "#" },
-    { name: "熊本県", region: "kyushu-okinawa", status: "coming-soon", url: "#" },
-    { name: "大分県", region: "kyushu-okinawa", status: "coming-soon", url: "#" },
-    { name: "宮崎県", region: "kyushu-okinawa", status: "coming-soon", url: "#" },
-    { name: "鹿児島県", region: "kyushu-okinawa", status: "coming-soon", url: "#" },
-    { name: "沖縄県", region: "kyushu-okinawa", status: "coming-soon", url: "#" }
+    { name: "福岡県", region: "kyushu-okinawa", status: "available", url: "fukuoka/index.html", municipalities: 60, subsidies: 1 },
+    { name: "佐賀県", region: "kyushu-okinawa", status: "available", url: "saga/index.html", municipalities: 20, subsidies: 1 },
+    { name: "長崎県", region: "kyushu-okinawa", status: "available", url: "nagasaki/index.html", municipalities: 21, subsidies: 1 },
+    { name: "熊本県", region: "kyushu-okinawa", status: "available", url: "kumamoto/index.html", municipalities: 45, subsidies: 0 },
+    { name: "大分県", region: "kyushu-okinawa", status: "available", url: "oita/index.html", municipalities: 18, subsidies: 1 },
+    { name: "宮崎県", region: "kyushu-okinawa", status: "available", url: "miyazaki/index.html", municipalities: 26, subsidies: 5 },
+    { name: "鹿児島県", region: "kyushu-okinawa", status: "available", url: "kagoshima/index.html", municipalities: 43, subsidies: 1 },
+    { name: "沖縄県", region: "kyushu-okinawa", status: "available", url: "okinawa/index.html", municipalities: 41, subsidies: 1 }
 ];
 
 // 現在のフィルター
