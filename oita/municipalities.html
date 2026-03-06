@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大分県市町村一覧 – WORKERTRIP</title>
+    <meta name="description" content="大分県18市町村のワーケーション情報一覧。別府市補助金、温泉施設情報などを検索・比较できます。">
+    <link rel="canonical" href="https://workertrip.jp/oita/municipalities.html">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <a href="../index.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px;">
+                    <i class="fas fa-mountain"></i>
+                    <span class="brand-text">WORKERTRIP 大分</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link"><i class="fas fa-globe-asia"></i> 全国</a></li>
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> ホーム</a></li>
+                <li><a href="municipalities.html" class="nav-link active"><i class="fas fa-map-marked-alt"></i> 自治体一覧</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ページヘッダー -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">自治体一覧</h1>
+            <p class="page-subtitle">
+                大分県18市町村のワーケーション取り組み情報<br>
+                専用ページ、PDFなどで検索・比較できます
+            </p>
+        </div>
+    </section>
+
+    <!-- 広告枠：ヘッダー直下（728x90）
+         使用時はコメントを外してください
+    <div class="container">
+        <div class="ad-container ad-header">
+            <p class="ad-label">Advertisement</p>
+            <div class="ad-placeholder">728 × 90 広告枠</div>
+        </div>
+    </div>
+    -->
+
+    <!-- 検索・フィルターセクション -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="市町村名で検索...（例：別府市、由布市）"
+                >
+                <button id="clearSearch" class="clear-btn" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-list"></i> すべて表示
+                </button>
+                <button class="filter-btn" data-filter="subsidy">
+                    <i class="fas fa-star"></i> 2026年補助金あり
+                </button>
+                <button class="filter-btn" data-filter="dedicated">
+                    <i class="fas fa-bookmark"></i> 専用ページあり
+                </button>
+                <button class="filter-btn" data-filter="pdf">
+                    <i class="fas fa-file-pdf"></i> PDFのみ
+                </button>
+            </div>
+
+            <div class="result-info">
+                <span id="resultCount">18</span> 件の市町村が見つかりました
+            </div>
+        </div>
+    </section>
+
+    <!-- 自治体リストセクション -->
+    <section class="municipality-list-section">
+        <div class="container">
+            <div class="municipality-grid" id="municipalityList">
+                <!-- JavaScriptで動的に生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 広告枠：コンテンツ終盤（728x90）
+         使用時はコメントを外してください
+    <div class="container">
+        <div class="ad-container ad-footer">
+            <p class="ad-label">Advertisement</p>
+            <div class="ad-placeholder">728 × 90 広告枠</div>
+        </div>
+    </div>
+    -->
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="footer-title">
+                        <i class="fas fa-mountain"></i>
+                        <span class="brand-text">WORKERTRIP 大分</span>
+                    </h4>
+                    <p class="footer-text">
+                        大分県でのワーケーション情報を発信する総合ポータルサイトです。
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-heading">コンテンツ</h5>
+                    <ul class="footer-links">
+                        <li><a href="municipalities.html">自治体一覧</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-heading">情報</h5>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">全国トップ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-heading">SNS</h5>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 株式会社WorkerTrip. All rights reserved.</p>
+                <p class="footer-note">
+                    <i class="fas fa-info-circle"></i>
+                    このサイトの情報は2025年3月時点のものです。最新情報は各自治体の公式サイトでご確認ください。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/data-oita.js"></script>
+    <script src="../js/municipalities.js"></script>
+</body>
+</html>
