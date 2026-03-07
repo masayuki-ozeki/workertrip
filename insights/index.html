@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>市場分析・インサイト – WORKERTRIP</title>
+    <meta name="description" content="ワーケーション・コワーキング市場の最新動向を深掘り分析。政府施策、業界トレンド、データから読み解く2026年の展望。">
+    <link rel="canonical" href="https://workertrip.jp/insights/">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="市場分析・インサイト – WORKERTRIP">
+    <meta property="og:description" content="ワーケーション・コワーキング市場の最新動向を深掘り分析。政府施策、業界トレンド、データから読み解く2026年の展望。">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop">
+    <meta property="og:url" content="https://workertrip.jp/insights/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <style>
+        /* インサイトページ専用スタイル */
+        .insights-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .insights-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .insights-hero__content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .insights-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+        
+        .insights-hero__subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+        
+        .insights-hero__meta {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .insights-hero__meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* インサイトカードグリッド */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+            margin-bottom: 80px;
+        }
+        
+        .insight-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .insight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+        
+        .insight-card__header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 32px 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .insight-card__header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .insight-card__category {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .insight-card__title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .insight-card__subtitle {
+            font-size: 1rem;
+            opacity: 0.95;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .insight-card__body {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .insight-card__summary {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+        
+        .insight-card__meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        
+        .insight-card__date {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .insight-card__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .insight-card__link:hover {
+            color: #764ba2;
+            gap: 12px;
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .insights-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .insights-hero__subtitle {
+                font-size: 1rem;
+            }
+            
+            .insights-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .insight-card__title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- グローバルナビゲーション -->
+    <div id="global-nav-mount"></div>
+    <script src="../js/global-nav.js"></script>
+    
+    <!-- ヒーローセクション -->
+    <section class="insights-hero">
+        <div class="container">
+            <div class="insights-hero__content">
+                <h1><i class="fas fa-chart-line"></i> 市場分析・インサイト</h1>
+                <p class="insights-hero__subtitle">
+                    ワーケーション・コワーキング市場の最新動向を深掘り分析
+                </p>
+                <div class="insights-hero__meta">
+                    <div class="insights-hero__meta-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>全3記事</span>
+                    </div>
+                    <div class="insights-hero__meta-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>最終更新：2026年3月</span>
+                    </div>
+                    <div class="insights-hero__meta-item">
+                        <i class="fas fa-tags"></i>
+                        <span>政府施策 / 業界トレンド / データ分析</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- インサイト記事一覧 -->
+    <section class="section">
+        <div class="container">
+            <div class="insights-grid">
+                <!-- インサイト①：観光庁予算 -->
+                <article class="insight-card">
+                    <div class="insight-card__header">
+                        <div class="insight-card__category">
+                            <i class="fas fa-landmark"></i> 政府施策
+                        </div>
+                        <h2 class="insight-card__title">観光庁2026年度予算分析</h2>
+                        <p class="insight-card__subtitle">デジタルノマド誘客に過去最高1億円</p>
+                    </div>
+                    <div class="insight-card__body">
+                        <p class="insight-card__summary">
+                            令和8年度当初予算案で観光庁予算が前年比2.4倍の1,383億円に。その中で「デジタルノマド誘客促進事業」に1億円を計上し、3年連続の実施となった。国がワーケーション・デジタルノマド施策を重点政策として位置づけた背景、予算推移、今後の展開を徹底分析。
+                        </p>
+                        <div class="insight-card__meta">
+                            <div class="insight-card__date">
+                                <i class="fas fa-clock"></i>
+                                <time datetime="2026-03-06">2026.03.06</time>
+                            </div>
+                            <a href="2026-03-kankocho-budget/" class="insight-card__link">
+                                詳細を読む <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- インサイト②：地域共創型 -->
+                <article class="insight-card">
+                    <div class="insight-card__header">
+                        <div class="insight-card__category">
+                            <i class="fas fa-building"></i> 業界トレンド
+                        </div>
+                        <h2 class="insight-card__title">地域共創型コワーキングの台頭</h2>
+                        <p class="insight-card__subtitle">ATOMica×イオンモールが示す新モデル</p>
+                    </div>
+                    <div class="insight-card__body">
+                        <p class="insight-card__summary">
+                            大分オーパに誕生したATOMicaとイオンモールの協業拠点は、全国初の「地域共創型」コワーキングスペース。都市型オフィスとは異なる、地域の課題解決と事業創出を目的とした新たなモデルが注目を集める。人口流出が続く地方都市での挑戦、その戦略と可能性を読み解く。
+                        </p>
+                        <div class="insight-card__meta">
+                            <div class="insight-card__date">
+                                <i class="fas fa-clock"></i>
+                                <time datetime="2026-03-06">2026.03.06</time>
+                            </div>
+                            <a href="2026-03-regional-coworking/" class="insight-card__link">
+                                詳細を読む <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- インサイト③：多様化・専門化 -->
+                <article class="insight-card">
+                    <div class="insight-card__header">
+                        <div class="insight-card__category">
+                            <i class="fas fa-chart-bar"></i> データ分析
+                        </div>
+                        <h2 class="insight-card__title">コワーキング多様化・専門化</h2>
+                        <p class="insight-card__subtitle">WeWork大阪拡大に見る業界再編</p>
+                    </div>
+                    <div class="insight-card__body">
+                        <p class="insight-card__summary">
+                            WeWorkが大阪エリア4拠点目を本町にオープン。「シェアオフィス西高東低」傾向が鮮明になる中、大阪・福岡での需要拡大、地方への浸透が進む。コワーキング業界全体の構造変化、用途・業種の専門化、新たな競争軸を多角的に分析する。
+                        </p>
+                        <div class="insight-card__meta">
+                            <div class="insight-card__date">
+                                <i class="fas fa-clock"></i>
+                                <time datetime="2026-03-06">2026.03.06</time>
+                            </div>
+                            <a href="2026-03-diversification/" class="insight-card__link">
+                                詳細を読む <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- トップへ戻る -->
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="../" class="btn btn-secondary btn-large">
+                    <i class="fas fa-home"></i> トップページへ戻る
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">WORKERTRIP</h3>
+                    <p class="footer-text">全国のワーケーション情報と補助金制度を網羅したポータルサイト</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">サイトマップ</h4>
+                    <ul class="footer-links">
+                        <li><a href="../">トップページ</a></li>
+                        <li><a href="../subsidy/">補助金一覧</a></li>
+                        <li><a href="./">市場分析・インサイト</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WORKERTRIP. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

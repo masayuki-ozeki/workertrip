@@ -331,6 +331,70 @@ const municipalitiesData = [
   }
 ];
 
+// おすすめ施設データ（楽天・じゃらんアフィリエイトリンク対応）
+const recommendedFacilities = [
+  {
+    name: "オーベルジュ土佐山",
+    type: "宿泊施設",
+    area: "高知市土佐山",
+    imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
+    description: "高知市内から車で約30分の山間部に位置する高級オーベルジュ。地産地消の美食と静かな環境を備え、長期滞在のワーケーションに最適。Wi-Fi完備、個室ワークスペースあり。",
+    features: ["Wi-Fi完備", "個室ワークスペース", "地産地消レストラン", "温泉施設"],
+    rakutenUrl: "https://hb.afl.rakuten.co.jp/ichiba/example1",
+    jyaranUrl: "https://www.jalan.net/example1",
+    price: "¥15,000〜/泊",
+    rating: 4.5
+  },
+  {
+    name: "四万十の宿",
+    type: "宿泊施設",
+    area: "四万十町",
+    imageUrl: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop",
+    description: "日本最後の清流・四万十川沿いに建つ癒しの宿。川のせせらぎを聞きながらリモートワーク。カヌー体験や川遊びも楽しめる。地元食材を使った料理が好評。",
+    features: ["川沿いロケーション", "無料Wi-Fi", "ワークデスク完備", "アクティビティ充実"],
+    rakutenUrl: "https://hb.afl.rakuten.co.jp/ichiba/example2",
+    jyaranUrl: "https://www.jalan.net/example2",
+    price: "¥8,000〜/泊",
+    rating: 4.3
+  },
+  {
+    name: "室戸岬リゾートホテル",
+    type: "宿泊施設",
+    area: "室戸市",
+    imageUrl: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=600&fit=crop",
+    description: "室戸ユネスコ世界ジオパーク内に位置し、太平洋の絶景を望むリゾートホテル。全室オーシャンビュー、温泉大浴場完備。ワーケーションプランで連泊割引あり。",
+    features: ["オーシャンビュー", "温泉大浴場", "ビジネスセンター", "連泊割引"],
+    rakutenUrl: "https://hb.afl.rakuten.co.jp/ichiba/example3",
+    jyaranUrl: "https://www.jalan.net/example3",
+    price: "¥12,000〜/泊",
+    rating: 4.4
+  },
+  {
+    name: "高知市コワーキングスペース BASE",
+    type: "コワーキング",
+    area: "高知市中心部",
+    imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+    description: "高知駅から徒歩5分の好立地。ドロップイン・月額利用可能。高速Wi-Fi、会議室、電源、フリードリンク完備。地元クリエイターとの交流も盛ん。",
+    features: ["駅近", "高速Wi-Fi", "会議室あり", "ドロップイン可"],
+    rakutenUrl: "",
+    jyaranUrl: "",
+    price: "¥500/日、¥8,000/月",
+    rating: 4.6
+  },
+  {
+    name: "黒潮本陣",
+    type: "宿泊施設",
+    area: "黒潮町",
+    imageUrl: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=600&fit=crop",
+    description: "土佐の郷土料理と天然温泉が自慢の海辺の宿。カツオの一本釣り文化に触れ、サーフィンも楽しめる。ワーケーション向け長期滞在プラン（Wi-Fi完備）が好評。",
+    features: ["天然温泉", "郷土料理", "サーフィン", "長期滞在プラン"],
+    rakutenUrl: "https://hb.afl.rakuten.co.jp/ichiba/example5",
+    jyaranUrl: "https://www.jalan.net/example5",
+    price: "¥10,000〜/泊",
+    rating: 4.2
+  }
+];
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = municipalitiesData;
 }

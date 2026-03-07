@@ -330,8 +330,8 @@ const globalNavHTML = `
             </li>
             
             <li class="global-nav-item">
-                <a href="/subsidy/index.html" class="global-nav-link">
-                    💰 補助金
+                <a href="/insights/index.html" class="global-nav-link">
+                    📊 市場分析
                 </a>
             </li>
             
